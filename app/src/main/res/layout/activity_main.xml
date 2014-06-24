@@ -13,7 +13,8 @@
         android:id="@+id/setMethod"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="set method"/>
+        android:text="set method"
+        android:onClick="selectMethod"/>
 
     <Button
         android:id="@+id/enterMethod"

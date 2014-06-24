@@ -4,5 +4,12 @@
     <string name="app_name">TestOpenKeychain</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_unlock_method">Choose unlock method</string>
+
+    <string-array name="unlock_methods">
+        <item>Passphrase</item>
+        <item>Lockpattern</item>
+        <item>Lockpattern + NFC</item>
+    </string-array>
 
 </resources>
