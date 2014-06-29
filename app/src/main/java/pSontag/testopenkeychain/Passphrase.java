@@ -13,13 +13,13 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link PassphraseDialogFragment.OnFragmentInteractionListener} interface
+ * {@link Passphrase.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link PassphraseDialogFragment#newInstance} factory method to
+ * Use the {@link Passphrase#newInstance} factory method to
  * create an instance of this fragment.
  *
  */
-public class PassphraseDialogFragment extends Fragment {
+public class Passphrase extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -37,18 +37,18 @@ public class PassphraseDialogFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment PassphraseDialogFragment.
+     * @return A new instance of fragment Passphrase.
      */
     // TODO: Rename and change types and number of parameters
-    public static PassphraseDialogFragment newInstance(String param1, String param2) {
-        PassphraseDialogFragment fragment = new PassphraseDialogFragment();
+    public static Passphrase newInstance(String param1, String param2) {
+        Passphrase fragment = new Passphrase();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
-    public PassphraseDialogFragment() {
+    public Passphrase() {
         // Required empty public constructor
     }
 
@@ -65,7 +65,7 @@ public class PassphraseDialogFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_passphrase_dialog, container, false);
+        return inflater.inflate(R.layout.fragment_passphrase, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -90,11 +90,6 @@ public class PassphraseDialogFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
-    }
-
-
-    public void onFragmentInteraction(Uri uri) {
-
     }
 
     /**
