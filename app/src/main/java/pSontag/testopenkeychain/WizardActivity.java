@@ -44,4 +44,7 @@ public class WizardActivity extends FragmentActivity
     public void onFragmentInteraction(Uri uri) {
 
     }
+    public void cancel(View view) {
+        this.finish();
+    }
 }

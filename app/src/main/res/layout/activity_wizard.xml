@@ -22,7 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minEms="9"
-            android:text="Cancel"/>
+            android:text="Cancel"
+            android:onClick="cancel"/>
         <Button
             android:id="@+id/nextButton"
             android:layout_width="wrap_content"
