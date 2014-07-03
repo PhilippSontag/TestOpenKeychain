@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/libs/android/lockpattern/android-lockpattern.iml" filepath="$PROJECT_DIR$/libs/android/lockpattern/android-lockpattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lockpattern/lockpattern.iml" filepath="$PROJECT_DIR$/lockpattern/lockpattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lockpattern/lockpattern.iml" filepath="$PROJECT_DIR$/lockpattern/lockpattern.iml" />
     </modules>
   </component>
 </project>
