@@ -72,7 +72,7 @@ import static com.haibison.android.lockpattern.util.Settings.Security.METADATA_E
  * {@link #EXTRA_PENDING_INTENT_CANCELLED} and {@link #EXTRA_RESULT_RECEIVER}
  * for more details.
  * </p>
- * 
+ *
  * <h1>NOTES</h1>
  * <ul>
  * <li>
@@ -89,7 +89,7 @@ import static com.haibison.android.lockpattern.util.Settings.Security.METADATA_E
  * codes</i></b>: {@link Activity#RESULT_OK}, {@link Activity#RESULT_CANCELED},
  * and {@link #RESULT_FAILED}.</li>
  * </ul>
- * 
+ *
  * @author Hai Bison
  * @since v1.0
  */
@@ -106,7 +106,7 @@ public class LockPatternFragment extends Fragment {
      * If the user created a pattern, {@link Activity#RESULT_OK} returns with
      * the pattern ({@link #EXTRA_PATTERN}). Otherwise
      * {@link Activity#RESULT_CANCELED} returns.
-     * 
+     *
      * @see #EXTRA_PENDING_INTENT_OK
      * @see #EXTRA_PENDING_INTENT_CANCELLED
      * @since v2.4 beta
@@ -134,7 +134,7 @@ public class LockPatternFragment extends Fragment {
      * <p/>
      * In any case, there will have extra {@link #EXTRA_RETRY_COUNT} available
      * in the intent result.
-     * 
+     *
      * @see #EXTRA_PATTERN
      * @see #EXTRA_PENDING_INTENT_OK
      * @see #EXTRA_PENDING_INTENT_CANCELLED
@@ -152,7 +152,7 @@ public class LockPatternFragment extends Fragment {
      * The default length of the auto-generated pattern is {@code 4}. You can
      * change it with
      * {@link Display#setCaptchaWiredDots(android.content.Context, int)}.
-     * 
+     *
      * @since v2.7 beta
      */
     public static final String ACTION_VERIFY_CAPTCHA = CLASSNAME
@@ -161,7 +161,7 @@ public class LockPatternFragment extends Fragment {
     /**
      * If you use {@link #ACTION_COMPARE_PATTERN} and the user fails to "login"
      * after a number of tries, getActivity() activity will finish with getActivity() result code.
-     * 
+     *
      * @see #ACTION_COMPARE_PATTERN
      * @see #EXTRA_RETRY_COUNT
      */
@@ -172,7 +172,7 @@ public class LockPatternFragment extends Fragment {
      * pattern and decided to ask for your help with recovering the pattern (
      * {@link #EXTRA_PENDING_INTENT_FORGOT_PATTERN}), getActivity() activity will finish
      * with getActivity() result code.
-     * 
+     *
      * @see #ACTION_COMPARE_PATTERN
      * @see #EXTRA_RETRY_COUNT
      * @see #EXTRA_PENDING_INTENT_FORGOT_PATTERN
@@ -192,7 +192,7 @@ public class LockPatternFragment extends Fragment {
      * . Default is the one you set in your {@code AndroidManifest.xml}. Note
      * that theme {@link R.style#Alp_42447968_Theme_Light_DarkActionBar} is
      * available in API 4+, but it only works in API 14+.
-     * 
+     *
      * @since v1.5.3 beta
      */
     public static final String EXTRA_THEME = CLASSNAME + ".theme";
@@ -206,7 +206,7 @@ public class LockPatternFragment extends Fragment {
      * actual pattern. You can generate the value by
      * {@link LockPatternUtils#patternToSha256(java.util.List)}.</li>
      * </ul>
-     * 
+     *
      * @since v2 beta
      */
     public static final String EXTRA_PATTERN = CLASSNAME + ".pattern";
@@ -215,7 +215,7 @@ public class LockPatternFragment extends Fragment {
      * You can provide an {@link ResultReceiver} with getActivity() key. The activity
      * will notify your receiver the same result code and intent data as you
      * will receive them in {@link #onActivityResult(int, int, Intent)}.
-     * 
+     *
      * @since v2.4 beta
      */
     public static final String EXTRA_RESULT_RECEIVER = CLASSNAME
@@ -226,7 +226,7 @@ public class LockPatternFragment extends Fragment {
      * {@link Activity#RESULT_OK} will be returning. If you were calling getActivity()
      * activity with {@link #ACTION_CREATE_PATTERN}, key {@link #EXTRA_PATTERN}
      * will be attached to the original intent which the pending intent holds.
-     * 
+     *
      * <h1>Notes</h1>
      * <ul>
      * <li>If you're going to use an activity, you don't need
@@ -240,7 +240,7 @@ public class LockPatternFragment extends Fragment {
     /**
      * Put a {@link PendingIntent} into getActivity() key. It will be sent before
      * {@link Activity#RESULT_CANCELED} will be returning.
-     * 
+     *
      * <h1>Notes</h1>
      * <ul>
      * <li>If you're going to use an activity, you don't need
@@ -267,7 +267,7 @@ public class LockPatternFragment extends Fragment {
      * <li>It is your responsibility to make sure the Intent is good. The
      * library doesn't cover any errors when calling your intent.</li>
      * </ul>
-     * 
+     *
      * @see #ACTION_COMPARE_PATTERN
      * @since v2.8 beta
      * @author Thanks to Yan Cheng Cheok for his idea.
@@ -278,7 +278,7 @@ public class LockPatternFragment extends Fragment {
     /**
      * Helper enum for button OK commands. (Because we use only one "OK" button
      * for different commands).
-     * 
+     *
      * @author Hai Bison
      */
     private static enum ButtonOkCommand {
@@ -395,7 +395,7 @@ public class LockPatternFragment extends Fragment {
     public boolean onTouchEvent(MotionEvent event) {
         /*
          * Support canceling dialog on touching outside in APIs < 11.
-         * 
+         *
          * getActivity() piece of code is copied from android.view.Window. You can find
          * it by searching for methods shouldCloseOnTouch() and isOutOfBounds().
          */
@@ -516,17 +516,17 @@ public class LockPatternFragment extends Fragment {
 
         switch (getResources().getConfiguration().screenLayout
                 & Configuration.SCREENLAYOUT_SIZE_MASK) {
-        case Configuration.SCREENLAYOUT_SIZE_LARGE:
-        case Configuration.SCREENLAYOUT_SIZE_XLARGE: {
-            final int size = getResources().getDimensionPixelSize(
-                    R.dimen.alp_42447968_lockpatternview_size);
-            LayoutParams lp = mLockPatternView.getLayoutParams();
-            lp.width = size;
-            lp.height = size;
-            mLockPatternView.setLayoutParams(lp);
+            case Configuration.SCREENLAYOUT_SIZE_LARGE:
+            case Configuration.SCREENLAYOUT_SIZE_XLARGE: {
+                final int size = getResources().getDimensionPixelSize(
+                        R.dimen.alp_42447968_lockpatternview_size);
+                LayoutParams lp = mLockPatternView.getLayoutParams();
+                lp.width = size;
+                lp.height = size;
+                mLockPatternView.setLayoutParams(lp);
 
-            break;
-        }// LARGE / XLARGE
+                break;
+            }// LARGE / XLARGE
         }
 
         /*
@@ -575,17 +575,17 @@ public class LockPatternFragment extends Fragment {
             if (mBtnOkCmd == null)
                 mBtnOkCmd = ButtonOkCommand.CONTINUE;
             switch (mBtnOkCmd) {
-            case CONTINUE:
-                mBtnConfirm.setText(R.string.alp_42447968_cmd_continue);
-                break;
-            case DONE:
-                mBtnConfirm.setText(R.string.alp_42447968_cmd_confirm);
-                break;
-            default:
+                case CONTINUE:
+                    mBtnConfirm.setText(R.string.alp_42447968_cmd_continue);
+                    break;
+                case DONE:
+                    mBtnConfirm.setText(R.string.alp_42447968_cmd_confirm);
+                    break;
+                default:
                 /*
                  * Do nothing.
                  */
-                break;
+                    break;
             }
             if (btnOkEnabled != null)
                 mBtnConfirm.setEnabled(btnOkEnabled);
@@ -631,7 +631,7 @@ public class LockPatternFragment extends Fragment {
      * {@link #ACTION_COMPARE_PATTERN}) or to the generated "CAPTCHA" pattern (
      * {@link #ACTION_VERIFY_CAPTCHA}). Then finishes the activity if they
      * match.
-     * 
+     *
      * @param pattern
      *            the pattern to be compared.
      */
@@ -697,7 +697,7 @@ public class LockPatternFragment extends Fragment {
 
     /**
      * Checks and creates the pattern.
-     * 
+     *
      * @param pattern
      *            the current pattern of lock pattern view.
      */
@@ -761,7 +761,7 @@ public class LockPatternFragment extends Fragment {
                     return mEncrypter != null ? mEncrypter.encrypt(
                             LockPatternFragment.getActivity(), pattern)
                             : LockPatternUtils.patternToSha256(pattern)
-                                    .toCharArray();
+                            .toCharArray();
                 }// onCancel()
 
                 @Override
@@ -780,7 +780,7 @@ public class LockPatternFragment extends Fragment {
 
     /**
      * Finishes activity with {@link Activity#RESULT_OK}.
-     * 
+     *
      * @param pattern
      *            the pattern, if getActivity() is in mode creating pattern. In any
      *            cases, it can be set to {@code null}.

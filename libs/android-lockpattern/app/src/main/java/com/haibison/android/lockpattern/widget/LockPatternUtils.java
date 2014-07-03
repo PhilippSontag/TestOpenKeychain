@@ -46,9 +46,9 @@ public class LockPatternUtils {
     public static final String UTF8 = "UTF-8";
 
     /**
-     * "SHA-256"
+     * "SHA-1"
      */
-    public static final String SHA256 = "SHA-256";
+    public static final String SHA1 = "SHA-1";
 
     /**
      * This is singleton class.
@@ -110,12 +110,12 @@ public class LockPatternUtils {
      * 
      * @param pattern
      *            The pattern
-     * @return The SHA-256 string of the pattern got from
+     * @return The SHA-1 string of the pattern got from
      *         {@link #patternToString(java.util.List)}
      */
-    public static String patternToSha256(List<LockPatternView.Cell> pattern) {
+    public static String patternToSha1(List<LockPatternView.Cell> pattern) {
         try {
-            MessageDigest md = MessageDigest.getInstance(SHA256);
+            MessageDigest md = MessageDigest.getInstance(SHA1);
             md.update(patternToString(pattern).getBytes(UTF8));
 
             byte[] digest = md.digest();
