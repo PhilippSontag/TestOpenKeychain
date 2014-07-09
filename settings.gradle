@@ -1,2 +1,2 @@
 include ':app', ':lockpattern'
-include ":app", ":libs:android:lockpattern"
+include ":app", ":android:lockpattern"

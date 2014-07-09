@@ -8,13 +8,15 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.Toast;
 
+import com.haibison.android.lockpattern.LockPatternFragment;
+
 public class WizardActivity extends FragmentActivity
-        implements SelectMethods.OnFragmentInteractionListener, Passphrase.OnFragmentInteractionListener, NFC.OnFragmentInteractionListener{
+        implements pSontag.testopenkeychain.SelectMethods.OnFragmentInteractionListener, pSontag.testopenkeychain.Passphrase.OnFragmentInteractionListener, pSontag.testopenkeychain.NFC.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SelectMethods selectMethods = new SelectMethods();
+        pSontag.testopenkeychain.SelectMethods selectMethods = new pSontag.testopenkeychain.SelectMethods();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.fragmentContainer, selectMethods).addToBackStack(null).commit();
         setContentView(R.layout.activity_wizard);
@@ -23,7 +25,7 @@ public class WizardActivity extends FragmentActivity
 
 
     public void dosomething(View view){
-        Passphrase passphrase = new Passphrase();
+        pSontag.testopenkeychain.Passphrase passphrase = new pSontag.testopenkeychain.Passphrase();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainer, passphrase).addToBackStack(null).commit();
 
@@ -31,7 +33,7 @@ public class WizardActivity extends FragmentActivity
 
     public void writeNFC(View view){
 
-        NFC nfc = new NFC();
+        pSontag.testopenkeychain.NFC nfc = new pSontag.testopenkeychain.NFC();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainer, nfc).addToBackStack(null).commit();
         //Zeig,dass du hier bist
@@ -39,6 +41,12 @@ public class WizardActivity extends FragmentActivity
         Toast.makeText(context, "Got here", Toast.LENGTH_SHORT).show();
     }
 
+    public void setLockpattern(View view) {
+        LockPatternFragment lpf = new LockPatternFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentContainer, lpf).addToBackStack(null).commit();
+        Context context = getApplicationContext();
+    }
 
     @Override
     public void onFragmentInteraction(Uri uri) {

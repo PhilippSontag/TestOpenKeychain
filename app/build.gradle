@@ -3,6 +3,7 @@ apply plugin: 'android'
 android {
     compileSdkVersion 19
     buildToolsVersion '19.1.0'
+
     defaultConfig {
         applicationId 'pSontag.testopenkeychain'
         minSdkVersion 15
